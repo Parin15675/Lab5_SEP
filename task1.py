@@ -5,18 +5,18 @@ from PySide6.QtGui import *
 
 class SimpleDrawingWindow(QWidget):
     def __init__(self):
-        super().__init__()  # Use super() for cleaner inheritance
+        super().__init__()  
         self.setWindowTitle("Simple GitHub Drawing")
 
-        # Correct the path to avoid loading issues
+        
         self.rabbit = QPixmap("images/rabbit.png")
         if self.rabbit.isNull():
             print("Image not found! Check the path.")
 
-    def paintEvent(self, e):  # Fixed method name
-        p = QPainter(self)  # Initialize directly
+    def paintEvent(self, e):  
+        p = QPainter(self)  
 
-        # Green triangle
+        
         p.setPen(QColor(0, 0, 0))
         p.setBrush(QColor(0, 127, 0))
         p.drawPolygon(QPolygon([
@@ -24,32 +24,52 @@ class SimpleDrawingWindow(QWidget):
             QPoint(130, 100), QPoint(100, 150)
         ]))
 
-        # Orange pie
+        
         p.setPen(QColor(255, 127, 0))
         p.setBrush(QColor(255, 127, 0))
         p.drawPie(50, 150, 100, 100, 0, 180 * 16)
 
-        # Orange triangle
+        
         p.drawPolygon(QPolygon([
             QPoint(50, 200), QPoint(150, 200), QPoint(100, 400)
         ]))
 
-        # Rabbit image
+        
         p.drawPixmap(QRect(200, 100, 320, 320), self.rabbit)
 
-        p.setPen(QColor(0, 0, 0))  # Black outline
-        p.setBrush(QColor(255, 0, 0))  # Red fill
+        p.setPen(QColor(0, 0, 0))  
+        p.setBrush(QColor(255, 0, 0))  
         p.drawEllipse(100, 100, 200, 200)
 
-        # Draw Leaf (Green)
-        p.setPen(QColor(0, 127, 0))  # Green outline
-        p.setBrush(QColor(0, 127, 0))  # Green fill
+        
+        p.setPen(QColor(0, 127, 0))  
+        p.setBrush(QColor(0, 127, 0))  
         p.drawEllipse(160, 50, 40, 60)
 
-        # Draw Stem (Brown Rectangle)
-        p.setPen(QColor(139, 69, 19))  # Brown outline
-        p.setBrush(QColor(139, 69, 19))  # Brown fill
+        
+        p.setPen(QColor(139, 69, 19))  
+        p.setBrush(QColor(139, 69, 19))  
         p.drawRect(190, 60, 20, 40)
+
+        p.setPen(QColor(255, 0, 0))
+        p.setBrush(QColor(255, 0, 0))
+        p.drawEllipse(50, 250, 100, 140)  
+
+        
+        p.setPen(QColor(255, 255, 0))
+        for x in range(60, 140, 20):  
+            for y in range(270, 370, 20):  
+                p.drawEllipse(x, y, 5, 5)
+
+        
+        p.setPen(QColor(0, 127, 0))
+        p.setBrush(QColor(0, 127, 0))
+        p.drawPolygon(QPolygon([
+            QPoint(100, 250), QPoint(80, 230), QPoint(120, 230)
+        ]))
+        p.drawPolygon(QPolygon([
+            QPoint(100, 250), QPoint(70, 240), QPoint(130, 240)
+        ]))
 
 def main():
     app = QApplication(sys.argv)
