@@ -27,51 +27,51 @@ def move_disk(t, start, end):
     pegs[end][1] += width
     pegs[start][1] -= width
 
-# def TowerOfHanoi(n, source, destination, auxiliary):
-#     if n == 0:
-#         return
+def TowerOfHanoi(n, source, destination, auxiliary):
+    if n == 0:
+        return
 
     
-#     TowerOfHanoi(n - 1, source, auxiliary, destination)
+    TowerOfHanoi(n - 1, source, auxiliary, destination)
     
-#     move_disk(disks[n - 1], source, destination)
+    move_disk(disks[n - 1], source, destination)
     
-#     TowerOfHanoi(n - 1, auxiliary, destination, source)
+    TowerOfHanoi(n - 1, auxiliary, destination, source)
 
 
-# screen = turtle.Screen()
+screen = turtle.Screen()
 
 
-# tower = turtle.Turtle()
-# tower.speed(0)  
+tower = turtle.Turtle()
+tower.speed(0)  
 
 
-# draw_towers()
+draw_towers()
 
 
-# num_disks = 4
-# disk_height = 25
-# disk_width = 25
+num_disks = 4
+disk_height = 25
+disk_width = 25
 
 
-# pegs = {
-#     'A': [-150, -125 + disk_height * num_disks],  
-#     'B': [0, -125],                              
-#     'C': [150, -125]                             
-# }
+pegs = {
+    'A': [-150, -125 + disk_height * num_disks],  
+    'B': [0, -125],                              
+    'C': [150, -125]                             
+}
 
 
-# disks = []
-# for i in range(num_disks):
-#     disk = turtle.Turtle()
-#     disk.shape("square")
-#     disk.shapesize(disk_height / 20, (disk_width + i * 30) / 20)  
-#     disk.penup()
-#     disk.goto(pegs['A'][0], pegs['A'][1] - (i * disk_height))  
-#     disks.append(disk)
+disks = []
+for i in range(num_disks):
+    disk = turtle.Turtle()
+    disk.shape("square")
+    disk.shapesize(disk_height / 20, (disk_width + i * 30) / 20)  
+    disk.penup()
+    disk.goto(pegs['A'][0], pegs['A'][1] - (i * disk_height))  
+    disks.append(disk)
 
 
-# TowerOfHanoi(num_disks, 'A', 'B', 'C')
+TowerOfHanoi(num_disks, 'A', 'B', 'C')
 
 
-# screen.mainloop()
+screen.mainloop()
