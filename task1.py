@@ -37,6 +37,20 @@ class SimpleDrawingWindow(QWidget):
         # Rabbit image
         p.drawPixmap(QRect(200, 100, 320, 320), self.rabbit)
 
+        p.setPen(QColor(0, 0, 0))  # Black outline
+        p.setBrush(QColor(255, 0, 0))  # Red fill
+        p.drawEllipse(100, 100, 200, 200)
+
+        # Draw Leaf (Green)
+        p.setPen(QColor(0, 127, 0))  # Green outline
+        p.setBrush(QColor(0, 127, 0))  # Green fill
+        p.drawEllipse(160, 50, 40, 60)
+
+        # Draw Stem (Brown Rectangle)
+        p.setPen(QColor(139, 69, 19))  # Brown outline
+        p.setBrush(QColor(139, 69, 19))  # Brown fill
+        p.drawRect(190, 60, 20, 40)
+
 def main():
     app = QApplication(sys.argv)
 
