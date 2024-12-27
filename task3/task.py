@@ -12,20 +12,20 @@ def draw_towers():
         tower.penup()
 
 
-# def move_disk(t, start, end):
-#     start_pos, end_pos = pegs[start], pegs[end]
-#     width = t.shapesize()[1] * 10
+def move_disk(t, start, end):
+    start_pos, end_pos = pegs[start], pegs[end]
+    width = t.shapesize()[1] * 10
 
     
-#     t.goto(t.xcor(), 200)
+    t.goto(t.xcor(), 200)
     
-#     t.goto(end_pos[0], 200)
+    t.goto(end_pos[0], 200)
     
-#     t.goto(end_pos[0], end_pos[1])
+    t.goto(end_pos[0], end_pos[1])
 
     
-#     pegs[end][1] += width
-#     pegs[start][1] -= width
+    pegs[end][1] += width
+    pegs[start][1] -= width
 
 # def TowerOfHanoi(n, source, destination, auxiliary):
 #     if n == 0:
